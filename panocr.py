@@ -258,7 +258,10 @@ app = FastAPI()
 class ImageType(BaseModel):
     url: str
 
-
+@app.get("/")
+def home():
+	return("message":"Hello Shirish, How are you?")
+	
 @app.post("/predict/")    
 def prediction(request: Request, 
 	file: bytes = File(...)):

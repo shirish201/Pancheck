@@ -259,18 +259,6 @@ class ImageType(BaseModel):
     url: str
 
 @app.get("/")
-def home():
-	return("message":"Hello Shirish, How are you?")
+def hello():
+	return {"message":"Hello Shirish, How are you?"}
 	
-@app.post("/predict/")    
-def prediction(request: Request, 
-	file: bytes = File(...)):
-
-	if request.method == "POST":
-		image_stream = io.BytesIO(file)
-		image_stream.seek(0)
-		file_bytes = np.asarray(bytearray(image_stream.read()), dtype=np.uint8)
-		frame = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
-		label = pan_result(frame)
-		return label
-	return "No post request found"

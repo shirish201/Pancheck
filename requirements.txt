@@ -1,7 +1,7 @@
 numpy==1.17.2
 fastapi==0.54.1
 starlette==0.13.2
-opencv-python==4.1.2.30
+opencv-python==4.2.0.32
 pytesseract==0.3.3
 matplotlib==3.1.1
 pydantic==1.4
